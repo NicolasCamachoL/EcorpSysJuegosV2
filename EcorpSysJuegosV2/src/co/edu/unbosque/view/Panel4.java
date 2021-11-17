@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 
 public class Panel4 extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JButton  butjugadores;
 	private JButton  butjuegos;
 	private JButton  butpartidas;

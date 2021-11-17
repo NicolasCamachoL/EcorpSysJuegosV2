@@ -1,6 +1,5 @@
 package co.edu.unbosque.view;
 
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -10,11 +9,8 @@ import javax.swing.border.EmptyBorder;
 
 import co.edu.unbosque.controller.Controller;
 
-import java.awt.GridBagLayout;
 import javax.swing.JTextField;
-import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
-import java.awt.Insets;
 import java.awt.Font;
 import java.awt.Color;
 public class Panel1 extends  JDialog {
@@ -23,25 +19,25 @@ public class Panel1 extends  JDialog {
 
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField textNombre;
+	private JTextField textEdad;
+	private JTextField textGenero;
+	private JTextField textPuntaje;
 	private JButton butVolver;
 	private JButton escrButton;
 	private JButton leerButton;
 
-	public static final String LEER1 = "Leer";
-	public static final String ESCRIBIR1 = "Escribir";
-	public static final String VOLVER1 = "Volver";
+	public static final String LEER1 = "Leer1";
+	public static final String ESCRIBIR1 = "Escribir1";
+	public static final String VOLVER1 = "Volver1";
 
 	
 	public Panel1(Controller control) {
 		getContentPane().setBackground(Color.BLACK);
 		
-
+		setTitle("Panel Jugador");
 		setVisible(false);
-		setBounds(100, 100, 331, 289);
+		setBounds(400, 150, 331, 289);
 		getContentPane().setLayout(null);
 		contentPanel.setBackground(Color.BLACK);
 		contentPanel.setBounds(0, 0, 315, 250);
@@ -49,56 +45,56 @@ public class Panel1 extends  JDialog {
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
 		{
-			JLabel lblNewLabel = new JLabel("Nombre");
-			lblNewLabel.setForeground(Color.WHITE);
-			lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-			lblNewLabel.setBounds(10, 27, 86, 14);
-			contentPanel.add(lblNewLabel);
+			JLabel lblNombre = new JLabel("Nombre");
+			lblNombre.setForeground(Color.WHITE);
+			lblNombre.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			lblNombre.setBounds(10, 27, 86, 14);
+			contentPanel.add(lblNombre);
 		}
 		{
-			textField = new JTextField();
-			textField.setBounds(75, 25, 86, 20);
-			contentPanel.add(textField);
-			textField.setColumns(10);
+			textNombre = new JTextField();
+			textNombre.setBounds(75, 25, 86, 20);
+			contentPanel.add(textNombre);
+			textNombre.setColumns(10);
 		}
 		{
-			JLabel lblNewLabel_1 = new JLabel("Edad");
-			lblNewLabel_1.setForeground(Color.WHITE);
-			lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-			lblNewLabel_1.setBounds(10, 62, 70, 14);
-			contentPanel.add(lblNewLabel_1);
+			JLabel lblEdad = new JLabel("Edad");
+			lblEdad.setForeground(Color.WHITE);
+			lblEdad.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			lblEdad.setBounds(10, 62, 70, 14);
+			contentPanel.add(lblEdad);
 		}
 		{
-			textField_1 = new JTextField();
-			textField_1.setBounds(75, 60, 86, 20);
-			contentPanel.add(textField_1);
-			textField_1.setColumns(10);
+			textEdad = new JTextField();
+			textEdad.setBounds(75, 60, 86, 20);
+			contentPanel.add(textEdad);
+			textEdad.setColumns(10);
 		}
 		{
-			JLabel lblNewLabel_2 = new JLabel("Genero");
-			lblNewLabel_2.setForeground(Color.WHITE);
-			lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-			lblNewLabel_2.setBounds(10, 105, 70, 14);
-			contentPanel.add(lblNewLabel_2);
+			JLabel lblGenero = new JLabel("Genero");
+			lblGenero.setForeground(Color.WHITE);
+			lblGenero.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			lblGenero.setBounds(10, 105, 70, 14);
+			contentPanel.add(lblGenero);
 		}
 		{
-			textField_2 = new JTextField();
-			textField_2.setBounds(75, 103, 86, 20);
-			contentPanel.add(textField_2);
-			textField_2.setColumns(10);
+			textGenero = new JTextField();
+			textGenero.setBounds(75, 103, 86, 20);
+			contentPanel.add(textGenero);
+			textGenero.setColumns(10);
 		}
 		{
-			JLabel lblNewLabel_3 = new JLabel("Puntos");
-			lblNewLabel_3.setForeground(Color.WHITE);
-			lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-			lblNewLabel_3.setBounds(10, 158, 70, 14);
-			contentPanel.add(lblNewLabel_3);
+			JLabel lblPuntaje = new JLabel("Puntaje");
+			lblPuntaje.setForeground(Color.WHITE);
+			lblPuntaje.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+			lblPuntaje.setBounds(10, 158, 70, 14);
+			contentPanel.add(lblPuntaje);
 		}
 		{
-			textField_3 = new JTextField();
-			textField_3.setBounds(75, 156, 86, 20);
-			contentPanel.add(textField_3);
-			textField_3.setColumns(10);
+			textPuntaje = new JTextField();
+			textPuntaje.setBounds(75, 156, 86, 20);
+			contentPanel.add(textPuntaje);
+			textPuntaje.setColumns(10);
 		}
 		{
 			JPanel buttonPane = new JPanel();
@@ -124,11 +120,8 @@ public class Panel1 extends  JDialog {
 				getRootPane().setDefaultButton(butVolver);
 			}
 		}
-
-
 	}
 
-	
 	public static String getLeer1() {
 		return LEER1;
 	}
@@ -168,6 +161,38 @@ public class Panel1 extends  JDialog {
 
 	public void setLeerButton(JButton leerButton) {
 		this.leerButton = leerButton;
+	}
+
+	public JTextField getTextNombre() {
+		return textNombre;
+	}
+
+	public void setTextNombre(JTextField textNombre) {
+		this.textNombre = textNombre;
+	}
+
+	public JTextField getTextEdad() {
+		return textEdad;
+	}
+
+	public void setTextEdad(JTextField textEdad) {
+		this.textEdad = textEdad;
+	}
+
+	public JTextField getTextGenero() {
+		return textGenero;
+	}
+
+	public void setTextGenero(JTextField textGenero) {
+		this.textGenero = textGenero;
+	}
+
+	public JTextField getTextPuntaje() {
+		return textPuntaje;
+	}
+
+	public void setTextPuntaje(JTextField textPuntaje) {
+		this.textPuntaje = textPuntaje;
 	}
 	
 

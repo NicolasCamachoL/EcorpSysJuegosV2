@@ -36,11 +36,9 @@ public class Panel3 extends JPanel {
 	private JButton butEscribir;
 	private JButton butEscribirReg;
 	private JButton butVolver;
-	public static final String ESCRIBIR3 = "Escribir";
-	public static final String ESCRIBIR_REG3 = "Escribir_Reg";
-	public static final String LEER3 = "Leer";
-	public static final String LEER_REG3 = "Leer_Reg";
-	public static final String VOLVER3 = "Volver";
+	public static final String ESCRIBIR3 = "Escribir3";
+	public static final String LEER3 = "Leer3";
+	public static final String VOLVER3 = "Volver3";
 	/**
 	 * Create the panel.
 	 * @param control 
@@ -159,13 +157,13 @@ public class Panel3 extends JPanel {
 		return ESCRIBIR3;
 	}
 	
-	public static String getEscribirReg3() {
-		return ESCRIBIR_REG3;
-	}
-	
-	public static String getLeerReg3() {
-		return LEER_REG3;
-	}
+//	public static String getEscribirReg3() {
+//		return ESCRIBIR_REG3;
+//	}
+//	
+//	public static String getLeerReg3() {
+//		return LEER_REG3;
+//	}
 	
 	public JLabel getLabjugador1() {
 		return labjugador1;

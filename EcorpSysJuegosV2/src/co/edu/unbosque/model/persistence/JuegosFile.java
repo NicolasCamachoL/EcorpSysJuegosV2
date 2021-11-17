@@ -1,10 +1,5 @@
-
-
 package co.edu.unbosque.model.persistence;
 
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,142 +7,56 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Random;
+import java.util.ArrayList;
 
+import co.edu.unbosque.model.JuegoDTO;
 
 
 public class JuegosFile {
+	private String ruta = "\\data\\juegos.dat";//guarda en directorio predeterminado del usuario (i.e. C:\\data\\juegos.dat).
+
+	private String nombreArchivoJuego="juegos.dat";
+	private File f;
+			
 	
-
-	private String ruta = "./data/juegos.dat";
-	private String rutaReg = "./data/regjuegos.dat";
-
-	private int REGISTROS = 10;
-	private File f; 
-	private FileOutputStream fos;     
-	private DataOutputStream dos;
-	private FileInputStream fis;     
-	private DataInputStream dis;
-	private double numeros[];
-	private int valores[];
-	private RegJuegos reg;
-	private RegJuegos[] datos;
-	
-
-	public int getREGISTROS() {
-		return REGISTROS;
-	}
-
-	public void setREGISTROS(int rEGISTROS) {
-		REGISTROS = rEGISTROS;
-	}
-
-	
-	public int[] getValores() {
-		return valores;
-	}
-
-	public void setValores(int[] valores) {
-		this.valores = valores;
-	}
-
-	public JuegosFile() {
-		// TODO Auto-generated constructor stub
-		numeros = new double[10];
-		valores = new int[10];
-		datos = new RegJuegos[10];
-	}
-
-	public String escribirArchivoBinario() {
+	public String escribirArchivoJuego(ArrayList<JuegoDTO> rgjuego) {
 		String mensaje="Archivo Generado Exitosamente!";
-		f=new File(ruta);
-		Random r=new Random(); 
-		//double d=18.76353; 
-		try{     
-			fos=new FileOutputStream(f);     
-			dos=new DataOutputStream(fos);     
-			for (int i=0;i<REGISTROS;i++){ 
-				dos.writeInt(i);
-				dos.writeDouble(r.nextDouble());//Nº aleatorio     
-			}     
-			dos.close();
-		} 
-		catch(FileNotFoundException e){     
-			mensaje= "No se encontro el archivo"; 
-		} 
-		catch(IOException e){     
-			mensaje = "Error al escribir"; 
-		}
-		return mensaje;
-	}
-	
-	public void leerArchivoBinario() {
 		f = new File(ruta);
 		try {
-			fis = new FileInputStream(f);
-			dis = new DataInputStream(fis);
-			for (int i=0; i<REGISTROS ; i++){
-				//System.out.println(dis.readDouble());
-				numeros[i] = dis.readDouble();
-				valores[i] = dis.readInt();
-			}
-			dis.close();
-		}
-		catch(IOException e){     
-			e.printStackTrace(); 
-		} 
-	}
-
-	public String escribirRegistro() {
-		String mensaje = "Registro de Empleado Ingresado!";
-		RegJuegos juegos[] = new RegJuegos[3];
-		juegos[0] = new RegJuegos("Empleado apellido1","");
-		juegos[1] = new RegJuegos("Empleado apellido2","");
-
-		try {
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(rutaReg));
-			out.writeObject(juegos);
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(ruta));
+			out.writeObject(rgjuego);
 			out.close();
-		}
-		catch (IOException e) {
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			mensaje = "Archivo no encontrado";
+		} catch (IOException e) {
 			e.printStackTrace();
 			mensaje = "Error de IO";
 		}
 		return mensaje;
 	}
 	
-	public void leerRegistro() {
-        ObjectInputStream in;
+	public ArrayList<JuegoDTO> leerArchivoJuego() {
+		f.getAbsoluteFile();
+		ObjectInputStream in;
+		ArrayList<JuegoDTO> rgjuego = null;
 		try {
-			in = new ObjectInputStream(new FileInputStream(rutaReg));
-	        datos = (RegJuegos[])in.readObject();
+			in = new ObjectInputStream(new FileInputStream(ruta));
+			rgjuego = (ArrayList<JuegoDTO>)in.readObject();
 	        in.close();
-	        for (int i = 0; i < datos.length; i++) {
-	            System.out.println(datos[i].getTipo());
-	            System.out.println(datos[i].getNombre());
-	        }
 
 		} catch (IOException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return rgjuego;
 	}
 
-	public RegJuegos[] getDatos() {
-		return datos;
+	public String getNombreArchivoJuego() {
+		return nombreArchivoJuego;
 	}
 
-	public void setDatos(RegJuegos[] datos) {
-		this.datos = datos;
+	public void setNombreArchivoJuego(String nombreArchivoJuego) {
+		this.nombreArchivoJuego = nombreArchivoJuego;
 	}
-
-	public double[] getNumeros() {
-		return numeros;
-	}
-
-	public void setNumeros(double[] numeros) {
-		this.numeros = numeros;
-	}
-	
 
 }

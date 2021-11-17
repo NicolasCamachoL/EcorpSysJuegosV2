@@ -7,8 +7,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class Panel3Resultados extends JPanel{
 	
@@ -18,12 +20,9 @@ public class Panel3Resultados extends JPanel{
 	private JTextArea txtpuntaje2;
 	private JTextArea txtTipoPartida;
 	private JTextArea txtJuego;
-	private JScrollPane scrolljugador1;
-	private JScrollPane scrolljugador2;
-	private JScrollPane scrollpuntaje1;
-	private JScrollPane scrollpuntaje2;
-	private JScrollPane scrollTipoPartida;
-	private JScrollPane scrollJuego;
+	private JTable tabPanR3;
+	private JScrollPane scrollPanR3;
+	private DefaultTableModel dtmPanR3;
 	private JLabel labArchivo;
 	
 	private static final long serialVersionUID = 1L;
@@ -60,7 +59,6 @@ public class Panel3Resultados extends JPanel{
 		txtJuego = new JTextArea();
 		txtJuego.setForeground(Color.BLACK);
 		txtJuego.setBackground(Color.WHITE);
-
 
 		add(txtjugador1);
 		add(txtpuntaje1);
@@ -126,6 +124,5 @@ public class Panel3Resultados extends JPanel{
 	public void setLabArchivo(JLabel labArchivo) {
 		this.labArchivo = labArchivo;
 	}
-	
-	
+		
 }
