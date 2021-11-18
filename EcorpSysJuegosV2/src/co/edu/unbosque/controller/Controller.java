@@ -176,7 +176,7 @@ public class Controller implements ActionListener{
 	
 	
 	public void buscarJuego() {
-		String njuego = gui.pedirString("Ingrese el nombre del juego a buscar");
+		String njuego = gui.pedirString("Ingrese el nombre --------------------------buscar");
 		JuegoDTO registro =jdao.buscarJuego(njuego);
 		if (registro == null) {
 			gui.mostrarMensaje("El Juego  no existe");
