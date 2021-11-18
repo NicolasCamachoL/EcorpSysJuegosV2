@@ -32,9 +32,7 @@ public class Panel3 extends JPanel {
 	private JTextField txtjuego;
 	
 	private JButton butLeer;
-	private JButton butLeerReg;
 	private JButton butEscribir;
-	private JButton butEscribirReg;
 	private JButton butVolver;
 	public static final String ESCRIBIR3 = "Escribir3";
 	public static final String LEER3 = "Leer3";
@@ -261,18 +259,6 @@ public class Panel3 extends JPanel {
 	}
 	public void setTxtjuego(JTextField txtjuego) {
 		this.txtjuego = txtjuego;
-	}
-	public JButton getButLeerReg() {
-		return butLeerReg;
-	}
-	public void setButLeerReg(JButton butLeerReg) {
-		this.butLeerReg = butLeerReg;
-	}
-	public JButton getButEscribirReg() {
-		return butEscribirReg;
-	}
-	public void setButEscribirReg(JButton butEscribirReg) {
-		this.butEscribirReg = butEscribirReg;
 	}
 	
 	
