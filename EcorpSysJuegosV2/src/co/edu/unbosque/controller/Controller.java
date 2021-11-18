@@ -12,6 +12,11 @@ import java.io.File;
 
 public class Controller implements ActionListener{
 
+	
+	
+	private static JuegoDAO jdao;
+
+	
 	private View gui;
 	private Mundo md;
 	private ArrayList<PartidaDTO> rgspartida;
@@ -33,7 +38,7 @@ public class Controller implements ActionListener{
 		rgjuego = new JuegoDTO(null, null);
 		gui = new View(this);
 		gui.setVisible(true);
-		
+
 		
 	}
 
@@ -112,6 +117,8 @@ public class Controller implements ActionListener{
 			gui.imprimirJuego(rgjuego);
 		}
 		
+
+		
 //		///////////////PANEL 3//////////////////////////////////////////////////////
 		
 		if(evento.getActionCommand().equals(gui.getP4().PARTIDAS)) {
@@ -166,4 +173,16 @@ public class Controller implements ActionListener{
 			gui.imprimirPartida(rgpartida);
 		}
 	}
-}	
+	
+	
+	public void buscarJuego() {
+		String njuego = gui.pedirString("Ingrese el nombre --------------------------buscar");
+		JuegoDTO registro =jdao.buscarJuego(njuego);
+		if (registro == null) {
+			gui.mostrarMensaje("El Juego  no existe");
+		}
+		else {
+			gui.imprimirJuego(registro);
+		}	
+	}
+}
