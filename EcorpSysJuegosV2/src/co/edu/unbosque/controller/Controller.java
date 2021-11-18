@@ -179,7 +179,7 @@ public class Controller implements ActionListener{
 		String njuego = gui.pedirString("Ingrese el nombre del juego a buscar");
 		JuegoDTO registro =jdao.buscarJuego(njuego);
 		if (registro == null) {
-			gui.mostrarMensaje("El Juego con ese nombre no existe");
+			gui.mostrarMensaje("El Juego  no existe");
 		}
 		else {
 			gui.imprimirJuego(registro);
