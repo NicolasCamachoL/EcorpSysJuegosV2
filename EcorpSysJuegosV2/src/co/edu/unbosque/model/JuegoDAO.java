@@ -13,8 +13,16 @@ public class JuegoDAO {
 		jgdto = new ArrayList<JuegoDTO>();
 		archivoJuego = new JuegosFile();
 	}
-	
-	public void agregarPartida(JuegoDTO jurgs) {
+	public JuegoDTO buscarJuego(String nombre) {
+		jgdto = archivoJuego.leerArchivoJuego();
+		for(JuegoDTO jgts : jgdto) {
+			if(jgts.getNombre().equals(nombre)) {
+				return jgts;
+			}
+		}
+		return null;
+	}
+	public void agregarJuego(JuegoDTO jurgs) {
 		jgdto = archivoJuego.leerArchivoJuego();
 		jgdto.add(jurgs);
 		archivoJuego.escribirArchivoJuego(jgdto);

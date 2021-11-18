@@ -15,7 +15,7 @@ public class Controller implements ActionListener{
 	
 	
 	private static JuegoDAO jdao;
-
+	private static JugadorDAO jgdao;
 	
 	private View gui;
 	private Mundo md;
@@ -183,6 +183,17 @@ public class Controller implements ActionListener{
 		}
 		else {
 			gui.imprimirJuego(registro);
+		}	
+	}
+	
+	public void buscarJugador() {
+		String njugador = gui.pedirString("Ingrese el nombre --------------------------buscar");
+		JugadorDTO registro =jgdao.buscarJugador(njugador);
+		if (registro == null) {
+			gui.mostrarMensaje("El jugador no existe");
+		}
+		else {
+			gui.imprimirJugador(registro);
 		}	
 	}
 }

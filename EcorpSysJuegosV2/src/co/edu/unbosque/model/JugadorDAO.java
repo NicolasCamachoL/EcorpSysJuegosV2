@@ -14,7 +14,7 @@ public class JugadorDAO {
 		archivoJuego = new JugadorFile();
 	}
 	
-	public JugadorDTO buscarPartida(String nombre) {
+	public JugadorDTO buscarJugador(String nombre) {
 		jrtds = archivoJuego.leerArchivoJugador();
 		for(JugadorDTO jrts : jrtds) {
 			if(jrts.getNombre().equals(nombre)) {
@@ -24,7 +24,7 @@ public class JugadorDAO {
 		return null;
 	}
 	
-	public void agregarPartida(JugadorDTO jrts) {
+	public void agregarJugador(JugadorDTO jrts) {
 		jrtds = archivoJuego.leerArchivoJugador();
 		jrtds.add(jrts);
 		archivoJuego.escribirArchivoJugador(jrtds);
