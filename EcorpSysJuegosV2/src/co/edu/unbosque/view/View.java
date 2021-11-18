@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import co.edu.unbosque.controller.Controller;
 import co.edu.unbosque.model.JuegoDTO;
@@ -12,6 +13,8 @@ import co.edu.unbosque.model.PartidaDTO;
 
 
 public class View extends JFrame{
+	
+	Scanner entrada = new Scanner(System.in);
 	//Constante generada por Eclipse  
 	private static final long serialVersionUID = 1L;
 	
@@ -23,6 +26,7 @@ public class View extends JFrame{
 	private Panel2Resultados pr2;
 	private Panel1Resultados pr1;
 
+	
 
 	public View(Controller control) {
 		setBackground(Color.BLACK);
@@ -107,11 +111,21 @@ public class View extends JFrame{
 		}
 	}
 	
+	public void mostrarMensaje(String mensaje) {
+		System.out.println(mensaje);
+	}
+	
 	public void imprimirJuego(JuegoDTO jgdto) {
 		getPr2().getTxtnombre().append(String.valueOf(jgdto.getNombre())+"\n");
 		getPr2().getTxtTipo().append(String.valueOf(jgdto.getTipo())+"\n");
 	}
 	
+	public String pedirString(String mensaje) {
+		String texto = "";
+		System.out.print(mensaje);
+		texto = entrada.nextLine();
+		return texto;
+	}
 	public void imprimirJugador(ArrayList<JugadorDTO> jrtds) {
 		for(JugadorDTO rJarts : jrtds) {
 			getPr1().getTxtnombre().append(String.valueOf(rJarts.getNombre())+"\n");
