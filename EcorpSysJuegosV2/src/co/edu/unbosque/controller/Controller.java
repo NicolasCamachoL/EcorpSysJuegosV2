@@ -22,14 +22,12 @@ public class Controller implements ActionListener{
 	private ArrayList<PartidaDTO> rgspartida;
 	private ArrayList<JugadorDTO> rgsjugador;
 	private ArrayList<JuegoDTO> rgsjuego;
-	private PartidaDAO rpdao;
 	private PartidaDTO rgpartida;
 	private JugadorDTO rgjugador;
 	private JuegoDTO rgjuego;
 
 	public Controller() {
 		md = new Mundo();
-		rpdao = new PartidaDAO();
 		rgspartida = new ArrayList<PartidaDTO>();
 		rgsjugador = new ArrayList<JugadorDTO>();
 		rgsjuego = new ArrayList<JuegoDTO>();
@@ -190,7 +188,7 @@ public class Controller implements ActionListener{
 		String njugador = gui.pedirString("Ingrese el nombre --------------------------buscar");
 		JugadorDTO registro =jgdao.buscarJugador(njugador);
 		if (registro == null) {
-			gui.mostrarMensaje("El jugador no existe");
+			gui.mostrarMensaje("El Jugador no existe");
 		}
 		else {
 			gui.imprimirJugador(registro);
