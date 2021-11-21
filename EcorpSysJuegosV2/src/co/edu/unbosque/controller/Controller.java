@@ -16,23 +16,26 @@ public class Controller implements ActionListener{
 	
 	private static JuegoDAO jdao;
 
+
+	private static JugadorDAO jgdao;
+
 	
 	private View gui;
 	private Mundo md;
 	private ArrayList<PartidaDTO> rgspartida;
 	private ArrayList<JugadorDTO> rgsjugador;
 	private ArrayList<JuegoDTO> rgsjuego;
-	private PartidaDAO rpdao;
 	private PartidaDTO rgpartida;
 	private JugadorDTO rgjugador;
 	private JuegoDTO rgjuego;
 
 	public Controller() {
+		
 		md = new Mundo();
-		rpdao = new PartidaDAO();
 		rgspartida = new ArrayList<PartidaDTO>();
 		rgsjugador = new ArrayList<JugadorDTO>();
 		rgsjuego = new ArrayList<JuegoDTO>();
+		
 		rgpartida = new PartidaDTO(null, null, null, null, 0, 0);
 		rgjugador = new JugadorDTO(null, 0, null, 0);
 		rgjuego = new JuegoDTO(null, null);
@@ -66,10 +69,13 @@ public class Controller implements ActionListener{
 		if(evento.getActionCommand().equals(gui.getP1().ESCRIBIR1)) {
 			aux = gui.getP1().getTextNombre().getText();
 			rgjugador.setNombre(aux);
+			
 			aux9 = Integer.parseInt(gui.getP1().getTextEdad().getText());
 			rgjugador.setEdad(aux9);
+			
 			aux2 = gui.getP1().getTextGenero().getText();
 			rgjugador.setGenero(aux2);
+			
 			aux7 = Double.parseDouble(gui.getP1().getTextPuntaje().getText());
 			rgjugador.setPuntaje(aux7);
 			
@@ -185,4 +191,19 @@ public class Controller implements ActionListener{
 			gui.imprimirJuego(registro);
 		}	
 	}
+<<<<<<< HEAD
 }	
+=======
+	
+	public void buscarJugador() {
+		String njugador = gui.pedirString("Ingrese el nombre --------------------------buscar");
+		JugadorDTO registro =jgdao.buscarJugador(njugador);
+		if (registro == null) {
+			gui.mostrarMensaje("El Jugador no existe");
+		}
+		else {
+			gui.imprimirJugador(registro);
+		}	
+	}
+}
+>>>>>>> branch 'main' of https://github.com/NicolasCamachoL/EcorpSysJuegosV2

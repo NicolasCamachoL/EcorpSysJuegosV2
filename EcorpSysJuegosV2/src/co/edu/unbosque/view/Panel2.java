@@ -19,10 +19,12 @@ public class Panel2 extends JPanel {
 	private JButton btnEscribir;//Escribir
 	private JButton btnLeer;//Leer
 	private JButton btnVolver;//Volver
+	
 	private JLabel lblnombreJuego;//Nombre del Juego
 	private JLabel lbltipoJuego;//Tipo de Juego
 	private JTextField textnombreJuego;
 	private JTextField texttipoJuego;
+	
 	public static final String ESCRIBIR2 = "Escribir";
 	public static final String LEER2 = "Leer";
 	public static final String VOLVER2 = "Volver";

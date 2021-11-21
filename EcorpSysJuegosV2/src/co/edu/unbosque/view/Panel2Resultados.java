@@ -17,9 +17,6 @@ public class Panel2Resultados extends JPanel{
 	private JTextArea txtnombre;
 	private JTextArea txtTipo;
 	private JLabel labArchivo;
-	private JTable tabTest;
-	private JScrollPane scrollTest;
-	private DefaultTableModel dtbTest;
 	private static final long serialVersionUID = 1L;
 	
 	public Panel2Resultados() {
@@ -30,14 +27,6 @@ public class Panel2Resultados extends JPanel{
 		border.setTitleColor(Color.WHITE);
 		setBorder( border );
 		labArchivo = new JLabel("Resultado de Registros");
-//		
-//		dtbTest = new DefaultTableModel(new String[] {"Nombre","Tipo"}, 0);
-//		tabTest = new JTable(dtbTest);
-//		tabTest.setEnabled(false);
-//		tabTest.getTableHeader().setReorderingAllowed(false);
-//		tabTest.getTableHeader().setResizingAllowed(false);
-//		scrollTest = new JScrollPane(tabTest);
-//		add(scrollTest);
 		
 		txtnombre = new JTextArea();
 		txtnombre.setForeground(Color.BLACK);

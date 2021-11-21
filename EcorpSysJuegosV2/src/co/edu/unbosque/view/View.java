@@ -15,7 +15,9 @@ import co.edu.unbosque.model.PartidaDTO;
 public class View extends JFrame{
 	
 	Scanner entrada = new Scanner(System.in);
+
 	//Constante generada por Eclipse  
+
 	private static final long serialVersionUID = 1L;
 	
 	private Panel1 p1;
@@ -42,13 +44,13 @@ public class View extends JFrame{
 		
 		pr1 = new Panel1Resultados();
 		
-	    p2 = new Panel2(control);
-	    p2.setBounds(0, 0, 300, 400);
-	    getContentPane().add(p2);
+	    	p2 = new Panel2(control);
+	    	p2.setBounds(0, 0, 300, 400);
+	    	getContentPane().add(p2);
 	    
-	    pr2 = new Panel2Resultados();
-	    pr2.setBounds(300, 0, 286, 362);
-	    getContentPane().add(pr2);
+	    	pr2 = new Panel2Resultados();
+	    	pr2.setBounds(300, 0, 286, 362);
+	    	getContentPane().add(pr2);
 
 		p3 = new Panel3(control);
 		p3.setBounds(0, 0, 584, 180);
@@ -76,7 +78,7 @@ public class View extends JFrame{
 			
 		p4.getButjugadores().addActionListener(control);
 	   	p4.getButjuegos().addActionListener(control);
-    	p4.getButpartidas().addActionListener(control);
+    		p4.getButpartidas().addActionListener(control);
 	}
 	
 	public void escribirMensaje(String mensaje) {

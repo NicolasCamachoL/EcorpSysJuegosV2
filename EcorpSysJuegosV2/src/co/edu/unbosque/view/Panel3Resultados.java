@@ -20,9 +20,6 @@ public class Panel3Resultados extends JPanel{
 	private JTextArea txtpuntaje2;
 	private JTextArea txtTipoPartida;
 	private JTextArea txtJuego;
-	private JTable tabPanR3;
-	private JScrollPane scrollPanR3;
-	private DefaultTableModel dtmPanR3;
 	private JLabel labArchivo;
 	
 	private static final long serialVersionUID = 1L;
