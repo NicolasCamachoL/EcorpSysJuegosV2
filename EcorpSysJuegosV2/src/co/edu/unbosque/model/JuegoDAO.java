@@ -13,9 +13,7 @@ public class JuegoDAO {
 		jgdto = new ArrayList<JuegoDTO>();
 		archivoJuego = new JuegosFile();
 	}
-<<<<<<< HEAD
-	
-=======
+
 	public JuegoDTO buscarJuego(String nombre) {
 		jgdto = archivoJuego.leerArchivoJuego();
 		for(JuegoDTO jgts : jgdto) {
@@ -25,23 +23,18 @@ public class JuegoDAO {
 		}
 		return null;
 	}
->>>>>>> branch 'main' of https://github.com/NicolasCamachoL/EcorpSysJuegosV2
+	
+	
+	
+
 	public void agregarJuego(JuegoDTO jurgs) {
 		jgdto = archivoJuego.leerArchivoJuego();
 		jgdto.add(jurgs);
+		
 		archivoJuego.escribirArchivoJuego(jgdto);
 	}
 	
 
-	public JuegoDTO buscarJuego(String nombreJuego) {
-		jgdto = archivoJuego.leerArchivoJuego();
-		for(JuegoDTO juego : jgdto) {
-			if(juego.getNombre().equals(nombreJuego)) {
-				return juego;
-			}
-		}
-		return null;
-	}
 
 	
 	public JuegosFile getArchivoJuego() {

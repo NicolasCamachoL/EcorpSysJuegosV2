@@ -13,6 +13,7 @@ import co.edu.unbosque.model.JuegoDTO;
 
 
 public class JuegosFile {
+	
 	private String ruta = "\\data\\juegos.dat";//guarda en directorio predeterminado del usuario (i.e. C:\\data\\juegos.dat).
 
 	private String nombreArchivoJuego="juegos.dat";

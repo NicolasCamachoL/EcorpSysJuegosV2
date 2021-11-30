@@ -191,9 +191,7 @@ public class Controller implements ActionListener{
 			gui.imprimirJuego(registro);
 		}	
 	}
-<<<<<<< HEAD
-}	
-=======
+
 	
 	public void buscarJugador() {
 		String njugador = gui.pedirString("Ingrese el nombre --------------------------buscar");
@@ -206,4 +204,3 @@ public class Controller implements ActionListener{
 		}	
 	}
 }
->>>>>>> branch 'main' of https://github.com/NicolasCamachoL/EcorpSysJuegosV2
